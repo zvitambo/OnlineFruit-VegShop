@@ -1,0 +1,43 @@
+<div class="container mt-5">
+
+  <div *ngIf="auth.RegisterSignInDiv"  style="text-align: center" >
+   
+        <div *ngIf="!registerMode"  style="text-align: center">
+           
+            <p class="lead"></p>
+            <div class="text-center">
+              <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
+              <button class="btn btn-info btn-lg" (click)="signinToggle()">Sign In </button>
+            </div>
+          </div>
+        
+          <div *ngIf="registerMode" class="container">
+            <div class="row justify-content-center">
+              <div class="col-4">
+               <app-register (CancelRegisterMode)="CancelRegistration($event)"></app-register>
+              </div>
+            </div>
+          </div>
+
+ 
+
+      <div *ngIf="signinMode" class="container">
+          <div class="row justify-content-center">
+            <div class="col-4">
+            <app-signin (CancelSignInMode)="CancelSignInMode($event)"></app-signin>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+
+    </div>
+
+
+<div class="container mt-5">
+    <div class="row">
+      <div *ngFor="let product of products" class="col-lg-2 col-md-3 col-sm-6">
+        <app-productcard [product]="product" (AddProductToCart)="AddNewProductToCart($event)"></app-productcard>
+      </div>
+    </div>
+  </div>

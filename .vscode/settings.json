@@ -1,0 +1,29 @@
+{
+    "deploy": {
+      "packages": [
+        {
+          "name": "Version 1.0",
+          "description": "OnlineFruitVegShop Version 1.0",
+          "files": ["OnlineFruitVegShop/bin/Debug/netcoreapp2.1/publish/**"]
+        }
+      ],
+      "targets": [
+        {
+          "type": "sftp",
+          "name": "Linux",
+          "description": "Remote Linux Server",
+          "dir": "/var/OnlineFruitVegShop",
+          "mappings": [
+              {
+                  "source": "/OnlineFruitVegShop/bin/Debug/netcoreapp2.1/publish",
+                  "target": "/"
+              }
+          ],
+          "host": "3.21.168.87",
+          "port": 22,
+          "user": "root", "password": "password",
+          "checkBeforeDeploy": true
+        }
+      ]
+    }
+  }

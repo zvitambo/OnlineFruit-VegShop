@@ -1,0 +1,42 @@
+<div   class="container mt-5" >
+    <fieldset>
+        <legend><h5><b>All Carts</b></h5></legend>
+     
+        <div class="table-main table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Username</th >
+                        <th>Detail</th >
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cart of carts">
+                       
+                        <td class="name-pr">
+                            
+                              {{cart.username}}
+    
+                        </td>
+    
+                        <td class="remove-pr">
+                     
+                            <i class="fa fa-edit" (click)= "ViewCart(cart)"></i>
+                         
+                            </td>
+                        
+                    
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+        </fieldset>
+    
+</div>
+
+
+
+
+
+

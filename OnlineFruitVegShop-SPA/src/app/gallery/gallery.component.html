@@ -1,0 +1,26 @@
+<div class="container mt-5">
+   
+  
+
+
+
+
+<div class="container mt-5">
+<div class="row">
+<div *ngFor="let product of products" class="col-lg-2 col-md-3 col-sm-6">
+  <app-productcard [product]="product" (AddProductToCart)="AddNewProductToCart($event)"></app-productcard>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
